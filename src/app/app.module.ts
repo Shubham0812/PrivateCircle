@@ -25,11 +25,13 @@ import {
 } from "@angular/material";
 
 import { ListViewComponent } from './components/list-view/list-view.component';
+import { TableRowComponent } from './components/table-row/table-row.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListViewComponent
+    ListViewComponent,
+    TableRowComponent
   ],
   imports: [
     BrowserModule,
