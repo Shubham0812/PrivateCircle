@@ -1,11 +1,28 @@
-<div class="container">
-  <div class="table-container margin-top-l">
+<div class="container" [ngClass]="{'description-container':showDescription}">
+  <div class="table-container">
 
     <div class="header">
       <p class="mat-h5 font-weight-bold margin-remove-bottom" *ngFor="let header of headerData">{{header}}</p>
     </div>
+    <ng-container *ngIf="this.status === 'done'">
+      <app-table-row *ngFor="let row of tableRows" [rowData]="row" (details)="showDetails($event)"></app-table-row>
+    </ng-container>
   </div>
 
-  <div class="details-container">
+  <div class="details-container" [hidden]="!showDescription">
+    <div class="add-description" (click)="addDescription()">
+      <p class="mat-h5 margin-remove-bottom margin-left-m">No description yet</p>
+      <div class="flex margin-right-xl align-center cursor-pointer">
+        <mat-icon>add</mat-icon>
+        <p class="mat-h6 margin-remove-bottom font-weight-bold primaryTypography" style="color: #002B42;">Add
+          description</p>
+      </div>
+    </div>
+    <div class="details-data" *ngIf="recievedDescription">
+      <p *ngFor="let data of recievedDescription" class="mat-h6 margin-left-xs">{{data}}</p>
+    </div>
+    <div class="details-data" *ngIf="recievedDescription.length < 0">
+      <p class="mat-h6 margin-remove-bottom"> No Companies </p>
+    </div>
   </div>
 </div>

@@ -1,22 +1,23 @@
-<div class="table-data">
-  <div>
+<div class="table-data" [ngClass]="{'table-selected': showDetailsClicked}">
+  <div class="flex align-center">
     <mat-icon *ngIf="showIcon" class="justify-center">donut_large</mat-icon>
-    <p class="mat-h4 font-weight-500" *ngIf=" !showIcon">{{rowData.date}}</p>
+    <p class="mat-h4 font-weight-500 margin-remove-bottom" *ngIf=" !showIcon">{{rowData.date}}</p>
   </div>
-  <div>
-    <p class="mat-h4 font-weight-500">{{rowData.listName}}</p>
+  <div class="flex align-center">
+    <p class="mat-h4 font-weight-500 margin-remove-bottom">{{rowData.listName}}</p>
   </div>
-  <div>
-    <p class="mat-h4 font-weight-500 flex flex-end">{{rowData.noOfEntities}}</p>
+  <div class="flex align-center">
+    <p class="mat-h4 font-weight-500 flex flex-end margin-remove-bottom">{{rowData.noOfEntities}}</p>
   </div>
-  <div class="actions">
+  <div class="actions flex align-center">
     <mat-icon matTooltip="Email" *ngIf="showMail">mail</mat-icon>
     <mat-icon matTooltip="Share" *ngIf="showShare">share</mat-icon>
     <mat-icon matTooltip="Edit" *ngIf="showEdit">edit</mat-icon>
     <mat-icon matTooltip="Delete" *ngIf="showDelete">delete</mat-icon>
   </div>
   <div class="flex flex-end margin-right-xl">
-    <button mat-button class="details-button" (click)="showDetails()">
+    <button mat-button class="details-button" (click)="showDetails()"
+      [ngClass]="{'details-selected': showDetailsClicked}">
       <p class="mat-h4 margin-remove-bottom ">Details</p>
     </button> </div>
 </div>

@@ -2,6 +2,7 @@ import {
   Component, OnInit, Input, Output, EventEmitter
 } from '@angular/core';
 import { IRows } from '../../model/table-model';
+import { DataFetchService } from '../../services/data-fetch.service';
 
 @Component({
   selector: 'app-table-row',
@@ -19,10 +20,11 @@ export class TableRowComponent implements OnInit {
   showEdit = false;
   showDelete = false;
 
-  constructor() { }
+  showDetailsClicked = false;
+
+  constructor(private dataFetchSvc: DataFetchService) { }
 
   ngOnInit() {
-    console.log('row data', this.rowData)
     if (this.rowData.date === '') {
       this.showIcon = true;
     }
@@ -38,15 +40,22 @@ export class TableRowComponent implements OnInit {
     if (this.rowData.actions.includes('delete')) {
       this.showDelete = true;
     }
+
+    this.dataFetchSvc.currentRow.subscribe(res => {
+      if (this.rowData.index === res) {
+        this.showDetailsClicked = true;
+      } else {
+        this.showDetailsClicked = false;
+      }
+    });
   }
 
   showDetails() {
-    console.log('raise an event now')
     if (this.rowData.details.length === 0) {
-      console.log('length 0 enc')
-      this.details.emit([])
+      this.details.emit([]);
     }
-    this.details.emit(this.rowData.details)
+    console.log('show details', this.showDetailsClicked);
+    this.details.emit(this.rowData.details);
+    this.dataFetchSvc.changeRow(this.rowData.index);
   }
-
 }

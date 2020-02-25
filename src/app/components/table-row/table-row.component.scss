@@ -1,17 +1,21 @@
 .table-data {
   display: grid;
-  margin-top: 8px;
   margin-left: 8px;
   grid-template-columns: 120px 0.50fr 100px 0.25fr 0.25fr;
 
   div {
     color: #333333;
     display: flex;
+    height: 52px;
   }
 
   div:first-child {
     justify-content: center;
   }
+}
+
+.table-selected {
+  background: rgba($color: #d3d3d3, $alpha: 0.5);
 }
 
 .actions {
@@ -28,10 +32,14 @@
 
 
 .details-button {
-  //   height: 28px;
-  margin-bottom: 8px;
+  margin: 12px 0;
 
   p {
     color: #002B42;
   }
+}
+
+.details-selected {
+  background: white;
+  border-bottom: 3px solid #002B42;
 }
