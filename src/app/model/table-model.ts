@@ -1,5 +1,6 @@
 export interface IRows {
     date: string;
+    index: number;
     listName: string;
     noOfEntities: number;
     actions: string[];
