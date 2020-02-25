@@ -1,0 +1,37 @@
+.table-data {
+  display: grid;
+  margin-top: 8px;
+  margin-left: 8px;
+  grid-template-columns: 120px 0.50fr 100px 0.25fr 0.25fr;
+
+  div {
+    color: #333333;
+    display: flex;
+  }
+
+  div:first-child {
+    justify-content: center;
+  }
+}
+
+.actions {
+  mat-icon {
+    padding: 0 7px;
+    color: #a8a8a8;
+    cursor: pointer;
+  }
+
+  mat-icon:first-child {
+    padding-left: 0;
+  }
+}
+
+
+.details-button {
+  //   height: 28px;
+  margin-bottom: 8px;
+
+  p {
+    color: #002B42;
+  }
+}

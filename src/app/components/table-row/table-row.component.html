@@ -1,0 +1,22 @@
+<div class="table-data">
+  <div>
+    <mat-icon *ngIf="showIcon" class="justify-center">donut_large</mat-icon>
+    <p class="mat-h4 font-weight-500" *ngIf=" !showIcon">{{rowData.date}}</p>
+  </div>
+  <div>
+    <p class="mat-h4 font-weight-500">{{rowData.listName}}</p>
+  </div>
+  <div>
+    <p class="mat-h4 font-weight-500 flex flex-end">{{rowData.noOfEntities}}</p>
+  </div>
+  <div class="actions">
+    <mat-icon matTooltip="Email" *ngIf="showMail">mail</mat-icon>
+    <mat-icon matTooltip="Share" *ngIf="showShare">share</mat-icon>
+    <mat-icon matTooltip="Edit" *ngIf="showEdit">edit</mat-icon>
+    <mat-icon matTooltip="Delete" *ngIf="showDelete">delete</mat-icon>
+  </div>
+  <div class="flex flex-end margin-right-xl">
+    <button mat-button class="details-button" (click)="showDetails()">
+      <p class="mat-h4 margin-remove-bottom ">Details</p>
+    </button> </div>
+</div>
