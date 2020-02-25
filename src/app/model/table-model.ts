@@ -1,7 +1,7 @@
-export interface ITable {
+export interface IRows {
     date: string;
     listName: string;
-    noOfEntries: number;
+    noOfEntities: number;
     actions: string[];
     details: string[];
 }
