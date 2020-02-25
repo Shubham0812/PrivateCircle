@@ -19,6 +19,7 @@ import {
   MatSelectModule,
   MatInputModule,
   MatSidenavModule,
+  MatSnackBarModule,
   MatCheckboxModule,
   MatChipsModule,
 
@@ -50,6 +51,7 @@ import { TableRowComponent } from './components/table-row/table-row.component';
     MatSelectModule,
     MatCheckboxModule,
     MatChipsModule,
+    MatSnackBarModule,
     FormsModule,
     ReactiveFormsModule
   ],

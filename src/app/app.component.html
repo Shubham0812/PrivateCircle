@@ -1,4 +1,4 @@
-<mat-progress-bar class="loading-bar" color="primary" mode="indeterminate"></mat-progress-bar>
+<mat-progress-bar class="loading-bar" *ngIf="showLoading" color="primary" mode="indeterminate"></mat-progress-bar>
 
 <div class="flex container align-center flex-between">
   <div class="flex">
@@ -17,7 +17,7 @@
       <mat-form-field appearance="outline" class="search-field" #searchfield>
         <mat-label>Search</mat-label>
 
-        <input matInput placeholder="" formControlName="searchQuery" autocomplete="off" />
+        <input matInput placeholder="" formControlName="search" autocomplete="off" />
         <button matSuffix type="submit">
           <mat-icon aria-hidden="false" aria-label="Search">search</mat-icon>
         </button>
