@@ -1,0 +1,22 @@
+
+@import "~@angular/material/theming";
+@import './theme_mixins.scss';
+
+@include mat-core();
+
+$JobHaven-primary: mat-palette($mat-indigo, 500, 100, 700);
+$JobHaven-accent: mat-palette($mat-amber, 900, 600, A200);
+
+// The warn palette is optional (defaults to red).
+$JobHaven-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$JobHaven-theme: mat-light-theme(
+  $JobHaven-primary,
+  $JobHaven-accent,
+  $JobHaven-warn
+);
+
+
+@include angular-material-theme($JobHaven-theme);
+@include theme-based-configurations($JobHaven-theme);

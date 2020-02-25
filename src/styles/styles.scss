@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./utility.scss";
+@import "./vars.scss";
+@import "./mixins.scss";
+
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+
+.primaryTypography {
+  font-family: "Oswald", sans-serif !important;
+}
+
+.secondaryTypography {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.mat-form-field-wrapper,
+.mat-form-field-infix {
+  padding: 8px !important;
+}
+
+.mat-form-field-outline {
+  background: white;
+}

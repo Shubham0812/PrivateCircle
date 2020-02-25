@@ -1,0 +1,30 @@
+.container {
+  display: grid;
+  grid-template-columns: 0.8fr 0.2fr;
+  position: relative;
+  height: 100vh;
+}
+
+.table-container {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.details-container {
+  border-left: 1px solid #555555;
+  overflow-y: auto !important;
+}
+
+
+.header {
+  display: grid;
+  grid-template-columns: 100px 0.45fr 120px 0.25fr;
+  border-bottom: 0.2px solid #A9A9A9;
+  border-top: 0.2px solid #A9A9A9;
+  padding: 8px;
+
+  p {
+    color: #A9A9A9;
+    margin-left: 32px;
+  }
+}
